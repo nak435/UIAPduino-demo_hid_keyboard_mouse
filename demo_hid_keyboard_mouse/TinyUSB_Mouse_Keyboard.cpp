@@ -46,10 +46,10 @@ size_t TinyKeyboard_::press(uint8_t k) {
         k = 0;
     } else {
         hid_key_t h = ascii_to_hid[k];
-        if (h.key & h.modd) {   // it's a capital letter or other character reached with shift
+        if (h.key & h.mod) {   // it's a capital letter or other character reached with shift
             kbd_internal.current.modifiers |= 0x02; // the left shift modifier
         }
-        k = h.key
+        k = h.key;
     }
     for (int i=0; i<6; i++) {
         if (kbd_internal.current.key_codes[i] == 0) {
@@ -70,10 +70,10 @@ size_t TinyKeyboard_::release(uint8_t k) {
         k = 0;
     } else {
         hid_key_t h = ascii_to_hid[k];
-        if (h.key & h.modd) {   // it's a capital letter or other character reached with shift
+        if (h.key & h.mod) {   // it's a capital letter or other character reached with shift
             kbd_internal.current.modifiers |= 0x02; // the left shift modifier
         }
-        k = h.key
+        k = h.key;
     }
 
     for (int i=0; i<6; i++) {
