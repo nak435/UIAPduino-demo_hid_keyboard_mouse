@@ -39,25 +39,47 @@ void TinyKeyboard_::_push_report(uint8_t step) {
 }
 
 size_t TinyKeyboard_::press(uint8_t k) {
-    if (k >= 0x80) kbd_internal.current.modifiers |= (1 << (k - 0x80));
-    else {
-        for (int i=0; i<6; i++) {
-            if (kbd_internal.current.key_codes[i] == 0) {
-                kbd_internal.current.key_codes[i] = k; break;
-            }
+    if (k >= 136) { // it's a non-printing key (not a modifier)
+        k = k - 136;
+    } else if (k >= 0x80) { // it's a modifier key
+        kbd_internal.current.modifiers |= (1 << (k - 0x80));
+        k = 0;
+    } else {
+        hid_key_t h = ascii_to_hid[k];
+        if (h.key & h.modd) {   // it's a capital letter or other character reached with shift
+            kbd_internal.current.modifiers |= 0x02; // the left shift modifier
+        }
+        k = h.key
+    }
+    for (int i=0; i<6; i++) {
+        if (kbd_internal.current.key_codes[i] == 0) {
+            kbd_internal.current.key_codes[i] = k;
+            break;
         }
     }
+
     _push_report(0);
     return 1;
 }
 
 size_t TinyKeyboard_::release(uint8_t k) {
-    if (k >= 0x80) kbd_internal.current.modifiers &= ~(1 << (k - 0x80));
-    else {
-        for (int i=0; i<6; i++) {
-            if (kbd_internal.current.key_codes[i] == k) kbd_internal.current.key_codes[i] = 0;
+    if (k >= 136) { // it's a non-printing key (not a modifier)
+        k = k - 136;
+    } else if (k >= 0x80) { // it's a modifier key
+        kbd_internal.current.modifiers &= ~(1 << (k - 0x80));
+        k = 0;
+    } else {
+        hid_key_t h = ascii_to_hid[k];
+        if (h.key & h.modd) {   // it's a capital letter or other character reached with shift
+            kbd_internal.current.modifiers |= 0x02; // the left shift modifier
         }
+        k = h.key
     }
+
+    for (int i=0; i<6; i++) {
+        if (kbd_internal.current.key_codes[i] == k) kbd_internal.current.key_codes[i] = 0;
+    }
+
     _push_report(0);
     return 1;
 }
