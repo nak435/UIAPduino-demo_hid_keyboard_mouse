@@ -73,8 +73,8 @@ int main()
 
                         switch(i) {
                             case 0: Keyboard.println("Hello UIAPduino CH32V003"); break;
-                            case 1: Keyboard.press(KEY_GUI_LEFT); Keyboard.press(KEY_SHIFT_LEFT); Keyboard.press('s'); Keyboard.releaseAll(); break;
-                          //case 1: Keyboard.press(KEY_GUI_LEFT); Keyboard.press(KEY_SHIFT_LEFT); Keyboard.press('5'); Keyboard.releaseAll(); break;
+                            case 1: Keyboard.press(KEY_LEFT_GUI); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('s'); Keyboard.releaseAll(); break;
+                          //case 1: Keyboard.press(KEY_LEFT_GUI); Keyboard.press(KEY_LEFT_SHIFT); Keyboard.press('5'); Keyboard.releaseAll(); break;
                             case 2: Mouse.move(3, 0, 0, 0); break; // X+3
                             case 3: Mouse.move(0, 0, 0, 3); break; // 垂直スクロール
                         }
