@@ -61,7 +61,7 @@ int main()
                 btn_last_time[i] = now;
             }
 
-            // 指定時間(DEBOUNCE_MS)以上、同じ値が続いていたら「確定」とみなす
+            // 指定時間(DEBOUNCE_MS)以上、同じ値が続いていたら「確定」
             if ((now - btn_last_time[i]) > (DEBOUNCE_MS * (DELAY_MS_TIME))) {
                 if (raw != btn_stable_state[i]) {
                     btn_stable_state[i] = raw;
