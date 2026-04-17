@@ -63,28 +63,18 @@ static const uint8_t mouse_hid_desc[] = {  //From http://eleccelerator.com/tutor
 			HID_LOGICAL_MIN( 0x81 ),                  //     LOGICAL_MINIMUM -127
 			HID_LOGICAL_MAX( 0x7f ),                  //     LOGICAL_MAXIMUM (127)
 			HID_REPORT_SIZE( 8 ),                     //     REPORT_SIZE (8)
-			HID_REPORT_COUNT( 3 ),                    //     REPORT_COUNT (4)
+			HID_REPORT_COUNT( 3 ),                    //     REPORT_COUNT (3)
 			HID_INPUT( 0x06 ),                        //     INPUT (Data,Var,Rel)
-            // 水平Pan (Consumer)
-            HID_USAGE_PAGE( HID_USAGE_PAGE_CONSUMER ),
-            HID_USAGE_N( 0x0238, 2 ),                  // AC Pan (水平スクロール)
-            HID_LOGICAL_MIN( 0x81 ),
-            HID_LOGICAL_MAX( 0x7F ),
-            HID_REPORT_SIZE( 8 ),
-            HID_REPORT_COUNT( 1 ),
-            HID_INPUT( 0x06 ),
+			// 水平ホイール (AC Pan)
+            HID_USAGE_PAGE( HID_USAGE_PAGE_DESKTOP ), //     USAGE_PAGE (Desktop)
+            HID_USAGE_N( 0x003C, 1 ),                 //     AC Pan (Horizontal Wheel)
+			HID_LOGICAL_MIN( 0x81 ),                  //     LOGICAL_MINIMUM -127
+			HID_LOGICAL_MAX( 0x7F ),                  //     LOGICAL_MAXIMUM (127)
+			HID_REPORT_SIZE( 8 ),                     //     REPORT_SIZE (8)
+			HID_REPORT_COUNT( 1 )                     //     REPORT_COUNT (3),
+			HID_INPUT( 0x06 ),                        //     INPUT (Data,Var,Rel)
 		HID_COLLECTION_END,                           //   END_COLLECTION
 	HID_COLLECTION_END,                               // END_COLLECTIONs
-
-	// Tack this on to do custom HID commands.
-	/*
-	HID_COLLECTION ( HID_COLLECTION_APPLICATION )                 ,
-		HID_REPORT_ID    ( 0xaa                                   )
-		HID_USAGE        ( 0xff              ) ,
-		HID_FEATURE      ( HID_DATA | HID_ARRAY | HID_ABSOLUTE    ) ,
-		HID_REPORT_COUNT ( 8 ) ,
-	HID_COLLECTION_END,
-	*/
 };
 
 //From http://codeandlife.com/2012/06/18/usb-hid-keyboard-with-v-usb/
