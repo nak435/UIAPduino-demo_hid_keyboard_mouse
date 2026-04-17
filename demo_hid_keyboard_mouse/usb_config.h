@@ -63,7 +63,7 @@ static const uint8_t mouse_hid_desc[] = {  //From http://eleccelerator.com/tutor
 			HID_LOGICAL_MIN( 0x81 ),                  //     LOGICAL_MINIMUM -127
 			HID_LOGICAL_MAX( 0x7f ),                  //     LOGICAL_MAXIMUM (127)
 			HID_REPORT_SIZE( 8 ),                     //     REPORT_SIZE (8)
-			HID_REPORT_COUNT( 4 ),                    //     REPORT_COUNT (4)
+			HID_REPORT_COUNT( 3 ),                    //     REPORT_COUNT (4)
 			HID_INPUT( 0x06 ),                        //     INPUT (Data,Var,Rel)
             // 水平Pan (Consumer)
             HID_USAGE_PAGE( HID_USAGE_PAGE_CONSUMER ),
