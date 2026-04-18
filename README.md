@@ -1,4 +1,4 @@
-UIAPduino Pro Micro CH32V003 V1.4 で HIDキーボード＆マウス を作る（TinyUSB Mouse and Keyboard ライクなAPIを実装）
+[UIAPduino Pro Micro CH32V003 V1.4](https://www.uiap.jp/uiapduino/pro-micro/ch32v003/v1dot4) で HIDキーボード＆マウス を作る（[`TinyUSB Mouse and Keyboard`](https://github.com/cyborg5/TinyUSB_Mouse_and_Keyboard) ライクなAPIを実装）
 
 # はじめに
 
