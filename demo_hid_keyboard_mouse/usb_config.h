@@ -156,7 +156,6 @@ static const uint8_t config_descriptor[] = {  //Mostly stolen from a USB mouse I
 	0x05, //Endpoint Descriptor (Must be 5)
 	0x81, //Endpoint Address
 	0x03, //Attributes
-//	0x04,	0x00, //Size
 	0x05,	0x00, //Size
 	10, //Interval (Number of milliseconds between polls)
 
