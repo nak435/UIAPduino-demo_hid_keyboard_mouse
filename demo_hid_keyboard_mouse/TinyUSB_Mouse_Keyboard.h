@@ -4,15 +4,7 @@
 #include <stdint.h>
 #include <stddef.h>
 
-// 修飾キー定義
-#define KEY_LEFT_CTRL   0x80  // bit 0: 0x01
-#define KEY_LEFT_SHIFT  0x81  // bit 1: 0x02
-#define KEY_LEFT_ALT    0x82  // bit 2: 0x04
-#define KEY_LEFT_GUI    0x83  // bit 3: 0x08
-#define KEY_RIGHT_CTRL  0x84  // bit 4: 0x10
-#define KEY_RIGHT_SHIFT 0x85  // bit 5: 0x20
-#define KEY_RIGHT_ALT   0x86  // bit 6: 0x40
-#define KEY_RIGHT_GUI   0x87  // bit 7: 0x80
+// Mouse button 定義
 #define MOUSE_LEFT      1
 #define MOUSE_RIGHT     2
 #define MOUSE_MIDDLE    4
