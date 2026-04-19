@@ -545,5 +545,5 @@ demo_hid_keyboard_mouse %
 ちゃんと動作しました。
 
 
-`TinyUSB Mouse and Keyboard`APIを含む、`demo_hid_keyboard_mouse`プロジェクト一式を[Github](https://github.com/nak435/UIAPduino-demo_hid_keyboard_mouse/)に公開しました。
+`Mouse and Keyboard`APIを含む、`demo_hid_keyboard_mouse`プロジェクト一式を[Github](https://github.com/nak435/UIAPduino-demo_hid_keyboard_mouse/)に公開しました。
 
