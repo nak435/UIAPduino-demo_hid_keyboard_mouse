@@ -18,7 +18,7 @@ https://github.com/YuukiUmeta-UIAP/rv003usb
 このコードは、1秒ごとに"b"キーをタイプし、マウスを小さな四角い枠内を移動させます。
 
 ---
-`UIAPduino`ではありませんが、[@74th](https://74th.hateblo.jp)さんの`CH32V003`を使った独自ボードで、`demo_composite_hid`を参考に 1キーの HIDキーボード を作成されたブログ記事がありました。
+`UIAPduino`ではありませんが、`CH32V003`を使った[@74th](https://74th.hateblo.jp)さんの独自ボードで、`demo_composite_hid`を参考に 1キーの HIDキーボード を作成されたブログ記事がありました。
 
 https://74th.hateblo.jp/entry/ch32v003-1key
 
@@ -56,7 +56,7 @@ extern TinyMouse_ Mouse;
 extern TinyKeyboard_ Keyboard;
 ```
 
-ASCIIコード→HIDキーコード変換もAPI内で行うため、アプリは普通に文字列を指定してタイプできます。また、`Alt+Ctrl+DEL`のようなモディファイアキーを伴うタイプも可能です。
+`ASCIIコード → HIDキーコード変換`もAPI内で行うため、アプリは普通に文字列を指定してタイプできます。また、`Alt+Ctrl+DEL`のようなモディファイアキーを伴うタイプも可能です。
 さらに、HIDキーコード変換は、JISキーボードとUSキーボードの両方に対応します（後述する#define値で指定）。
 
 
@@ -96,7 +96,7 @@ demo_hid_keyboard_mouse
 
 ## `Makefile`
 
-メインファイルを .cpp としたことによる変更です。
+メインファイルを `.cpp` としたことによる変更です。
 - ターゲットファイルのファイル拡張子（cpp）の指定
 - コンパイラを`gcc`から`g++`に変更
 
@@ -545,5 +545,5 @@ demo_hid_keyboard_mouse %
 ちゃんと動作しました。
 
 
-`Mouse and Keyboard`APIを含む、`demo_hid_keyboard_mouse`プロジェクト一式を[Github](https://github.com/nak435/UIAPduino-demo_hid_keyboard_mouse/)に公開しました。
+`TinyUSB Mouse and Keyboard`APIを含む、`demo_hid_keyboard_mouse`プロジェクト一式を[Github](https://github.com/nak435/UIAPduino-demo_hid_keyboard_mouse/)に公開しました。
 
